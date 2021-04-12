@@ -1,11 +1,11 @@
 version: "3"
 services:
-  postgres:
-    image: postgres:10-alpine
+  mysql:
+    image: mysql:10-alpine
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
-      - "5432:${POSTGRES_PORT}"
+      - "5432:${MYSQL_PORT}"
 volumes:
-  postgres:
+  mysql:
