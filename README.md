@@ -29,6 +29,12 @@ Pour démarrer cette base de donnée via Docker, dans un terminal il faut lancer
 docker-compose up
 ```
 
+Migrations
+
+```
+npm run migrate:latest
+```
+
 Puis dans un autre terminal, il faut démarrer l'application via la commande :
 
 ```
