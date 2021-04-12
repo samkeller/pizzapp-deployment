@@ -8,7 +8,7 @@ router.get("/pizzas", async (req, res) => {
   res.json(pizzas);
 });
 
-router.post("/add/pizzas", async (req, res) => {
+router.post("/pizzas", async (req, res) => {
   const { name } = req.body;
   const pizza = await PizzaModel.query()
     .insert({
@@ -18,4 +18,9 @@ router.post("/add/pizzas", async (req, res) => {
   res.json(pizza);
 });
 
+router.delete('/pizzas/:id', async (req, res) => {
+    const id = req.body;
+    const pizza = await PizzaModel.query(req.body.id);
 
+    await pizza.remove();
+});
