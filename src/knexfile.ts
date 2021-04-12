@@ -1,12 +1,9 @@
 import "./env";
 
 export default {
-  client: "mysql",
+  client: "pg",
   connection: {
-      host : '127.0.0.1',
-      user : process.env.MYSQL_USER,
-      password : process.env.MYSQL_PASSWORD,
-      database : process.env.MYSQL_TABLENAME,
+    connectionString: process.env.DATABASE_URL,
     ssl:
       process.env.NODE_ENV === "production"
         ? { rejectUnauthorized: false }
