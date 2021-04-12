@@ -14,5 +14,9 @@ production:
     image: ruby:latest
     script:
         - dpl --provider=heroku --app=$HEROKU_APP --api-key=$HEROKU_API_KEY
+        - npm i
+        - npm run migrate:latest
+        - npm run build
+        - npm run start
     only:
         - master
