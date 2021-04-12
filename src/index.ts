@@ -19,3 +19,7 @@ console.log(`Server is running on port ${PORT}.`);
 router.get("/", (req, res) => {
     res.sendFile(__dirname+"/public/index.html");
 })
+
+router.get("/salut", (req, res) => {
+    res.status(200).send("salut");
+})
