@@ -14,6 +14,10 @@ const PORT = process.env.PORT || 8000;
 const publicPath = path.join(__dirname, '../public')
 app.use(express.static(publicPath)); //__dir and not _dir
 
+app.use('/css',express.static(path.join(publicPath) + '/css'));
+app.use('/img',express.static(path.join(publicPath) + '/img'));
+
+
 app.listen(process.env.PORT, () => {
 console.log(`Server is running on port ${PORT}.`);
 });
