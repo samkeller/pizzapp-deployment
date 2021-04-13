@@ -18,7 +18,9 @@ body {
 
 #top-section {
     height: 360px;
-    background: #162858 url(../img/top.jpg) top;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background: url(../img/top.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

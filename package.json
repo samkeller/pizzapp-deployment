@@ -20,9 +20,13 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "@types/react": "^17.0.3",
     "express": "^4.17.1",
+    "express-react-views": "^0.11.0",
     "knex": "^0.21.15",
     "objection": "^2.2.15",
-    "pg": "^8.5.1"
+    "pg": "^8.5.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   }
 }
