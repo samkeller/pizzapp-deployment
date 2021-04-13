@@ -12,7 +12,6 @@ export class PizzaModel extends Model {
 
   static get tableName() {
     return "pizzas";
-    return "number"
   }
 
   static get idColumn() {
