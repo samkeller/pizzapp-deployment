@@ -1,0 +1,24 @@
+body {
+    background: #162858 url(../img/toptout.jpg) top repeat-x;
+}
+
+#main-container {
+    width: 70%;
+    padding: 2px;
+    margin: 0 15%;
+    height: 80vh;
+}
+
+#main-container>div {
+    width: 100%;
+    margin: 30px 0;
+    height: 80vh;
+    border: 2px #006699 solid;
+}
+
+#top-section {
+    height: 360px;
+    background: #162858 url(../img/top.jpg) top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
