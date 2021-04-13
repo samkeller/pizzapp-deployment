@@ -43,3 +43,5 @@ router.delete('/pizzas/:id', async (req, res) => {
    }).returning("*")
    res.json(pizza)
  })
+
+ export default router;

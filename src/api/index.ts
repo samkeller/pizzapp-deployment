@@ -4,3 +4,6 @@ import * as pizzas from "./pizzas";
 export const router = Router();
 
 router.use("/api", pizzas.router);
+
+
+export default router; 
