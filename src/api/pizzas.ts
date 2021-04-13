@@ -18,9 +18,9 @@ router.post("/pizzas", async (req, res) => {
   res.json(pizza);
 });
 
-router.delete('/pizzas/:id', async (req, res) => {
-    const id = req.body;
-    const pizza = await PizzaModel.query(req.body.id);
+router.delete('/pizzas/:id', (req, res) => {
+  const pizzas = PizzaModel.query().deleteById(1);
+ 
+  res.json(pizzas)
+ })
 
-    await pizza.remove();
-});
