@@ -5,7 +5,6 @@ export const router = Router();
 
 router.get("/pizzas", async (req, res) => {
   const pizzas = await PizzaModel.query();
-  console.log(pizzas);
   res.json(pizzas)
 
 });
@@ -13,8 +12,6 @@ router.get("/pizzas", async (req, res) => {
 router.get("/pizzas/:id", async (req, res) => {
   const id = req.params.id
   const pizza = await PizzaModel.query().findById(id);
-  console.log(pizza);
-
   res.json(pizza)
 })
 
@@ -26,7 +23,6 @@ router.post("/pizzas", async (req, res) => {
       prix
     })
     .returning("*");
-  console.log(pizza);
   res.json(pizza);
 });
 

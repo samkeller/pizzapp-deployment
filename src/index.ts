@@ -7,21 +7,19 @@ const app = express();
 
 app.use(express.json());
 app.use(router);
-
-
 const PORT = process.env.PORT || 8000;
 
-// Nécessaire pour servir le front
-const publicPath = path.join(__dirname, '../public')
-app.use(express.static(publicPath)); //__dir and not _dir
-app.use('/css',express.static(path.join(publicPath) + '/css'));
-app.use('/img',express.static(path.join(publicPath) + '/img'));
+// Front REACT
+app.use('/public',express.static('public'));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'tsx')
+var options = { beautify: true };
+app.engine('tsx', require('express-react-views').createEngine(options))
+
 
 
 app.listen(process.env.PORT, () => {
-console.log(`Server is running on port ${PORT}.`);
+    console.log(`Server is running on port ${PORT}.`);
 });
 
-router.get("/", (req, res) => {
-    res.sendFile(path.join(publicPath, "index.html"));
-})
+app.get('/', (req, res) => res.render('index'));
