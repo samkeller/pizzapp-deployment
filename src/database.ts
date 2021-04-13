@@ -8,9 +8,11 @@ Model.knex(database);
 export class PizzaModel extends Model {
   id!: number;
   name!: string;
+  prix!: number;
 
   static get tableName() {
     return "pizzas";
+    return "number"
   }
 
   static get idColumn() {
