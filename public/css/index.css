@@ -3,24 +3,21 @@ body {
 }
 
 #main-container {
-    width: 70%;
+    max-width: 700px;
     padding: 2px;
-    margin: 0 15%;
+    margin: 0 auto;
     height: 80vh;
 }
 
 #main-container>div {
     width: 100%;
     margin: 30px 0;
-    height: 80vh;
     border: 2px #006699 solid;
 }
 
 #top-section {
-    height: 360px;
-    background: url(../img/top.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    height: 321px;
+    background: url(../img/top.jpg) no-repeat;
+    background-repeat: no-repeat;
+    background-size: inherit 100%;
 }

@@ -10,6 +10,7 @@ app.use(router);
 const PORT = process.env.PORT || 8000;
 
 // Front REACT
+app.use(express.static('public'))
 app.use('/public',express.static('public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'tsx')
