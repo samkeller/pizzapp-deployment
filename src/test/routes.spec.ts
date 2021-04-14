@@ -4,7 +4,7 @@ import express from 'express';
 
 
 
-describe('Functional test example', () => {
+describe('Integration test', () => {
 
 
     it('should display pizzas on route /api/pizzas', async () => {
