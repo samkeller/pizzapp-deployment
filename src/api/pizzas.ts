@@ -18,11 +18,10 @@ router.get("/pizzas/:id", async (req, res) => {
 router.post("/pizzas", async (req, res) => {
   const { name, prix } = req.body;
   const pizza = await PizzaModel.query()
-    .insert({
+    .insertAndFetch({
       name,
       prix
     })
-    .returning("*");
   res.json(pizza);
 });
 
@@ -35,12 +34,14 @@ router.delete('/pizzas/:id', async (req, res) => {
 
 
 router.patch('/pizzas/:id', async (req, res) => {
-  const { name, prix } = req.body;
+  const { name, prix , size} = req.body;
   const id = req.params.id;
-  const pizza = await PizzaModel.query().findById(id).patch({
+  const pizza = await PizzaModel.query().patchAndFetchById(id , {
     name,
-    prix
-  }).returning("*")
+    prix,
+    size
+  })
+  console.log(pizza)
   res.json(pizza)
 })
 
