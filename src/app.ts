@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(router);
 
 // Front REACT
-app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.static(path.join(__dirname, "..", "react-app", 'build')))
 
 
 export default app
