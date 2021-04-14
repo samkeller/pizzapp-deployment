@@ -6,7 +6,8 @@
     "target": "es6",
     "moduleResolution": "node",
     "strict": true,
-    "outDir": "build"
+    "outDir": "build",
+    "jsx": "react",
   },
   "include": ["./src/**/*"]
 }

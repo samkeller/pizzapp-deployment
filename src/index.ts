@@ -4,10 +4,19 @@ import { router } from "./api";
 import app from './app'
 const path = require('path');
 
-
 const PORT = process.env.PORT || 8000;
 
+// Front REACT
+app.use('/public',express.static('public'));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'tsx')
+var options = { beautify: true };
+app.engine('tsx', require('express-react-views').createEngine(options))
+
+
+
 app.listen(process.env.PORT, () => {
-console.log(`Server is running on port ${PORT}.`);
+    console.log(`Server is running on port ${PORT}.`);
 });
 
+app.get('/', (req, res) => res.render('index'));

@@ -2,6 +2,8 @@ import supertest from 'supertest';
 import { router } from '../api/pizzas';
 import express from 'express';
 import app from '../app'
+import { database } from '../database';
+
 
 
 describe('Integration test', () => {
@@ -12,6 +14,14 @@ describe('Integration test', () => {
         const response = await client.get('/api/pizzas');
         expect(response.status).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
+
+    beforeAll(async () => {
+        await database.migrate.latest();
+    });
+
+    afterAll(async () => {
+        await database.destroy();
+    });
 
     });
 
