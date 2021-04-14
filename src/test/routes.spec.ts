@@ -1,45 +1,51 @@
 import supertest from 'supertest';
 import { router } from '../api/pizzas';
 import express from 'express';
-
+import app from '../app'
 
 
 describe('Integration test', () => {
 
-
     it('should display array on route /api/pizzas', async () => {
+        const client = supertest(app) 
 
-        const client = supertest(express().use(router));
-
-        const response = await client.get('/pizzas');
+        const response = await client.get('/api/pizzas');
         expect(response.status).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
 
     });
 
     it('should return pizzas', async () => {
-        const request = supertest(express().use(router))
-        const response = await request.get('/pizzas')
+        const request = supertest(app)
+        const response = await request.get('/api/pizzas')
 
         expect(response.status).toBe(200)
     });
 
 
-    it('should create pizza', async () => {
-        const request = supertest(router)
-        const pizza = {
-            name: 'peperoni',
-            price: 13,
-            size: "M"
-        }
-    });
-
     test("It should response pizza with id", async () => {
-        const request = supertest(express().use(router))
-        const response = await request.get('/pizzas/1')
+        const request = supertest(app)
+        const response = await request.get('/api/pizzas/1')
 
         expect(response.status).toBe(200);
     });
+    
+    it('should create a new pizza', async () => {
+
+        const request = supertest(app)
+        const response = await request.post('/api/pizzas')
+            .send({
+                id: 1,
+                name: 'pizza test',
+                price: 9.99,
+                size: "M"
+            })
+
+        expect(response.status).toEqual(200)
+        expect(response.body).toBeInstanceOf(Object);
+
+    })
+
 });
 
 
