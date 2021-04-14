@@ -1,3 +1,5 @@
+import nouveauClignotant from "../../resources/img/nouveau-clignotant.gif"
+import photothierry from "../../resources/img/photothierry.jpg"
 var React = require('react');
 
 function RightIndex(props: any) {
@@ -16,7 +18,7 @@ function RightIndex(props: any) {
                 <span style={{ fontStyle: "italic" }}>OUVERT le DIMANCHE &nbsp;de juin à fin aout</span>
             </div><br />
             <div style={{ textAlign: "center" }}>
-                <a href="/?Nos_plats"><img src="./img/nouveau-clignotant.gif" /> De nouveaux plats a découvrir!</a>
+                <a href="/?Nos_plats"><img src={nouveauClignotant} /> De nouveaux plats a découvrir!</a>
                 <br />
             </div>
             <h4 style={{ textAlign: "center", fontWeight: "bold", color: "#33CCFF", fontSize: "18px" }}>Commandez au :<br />
@@ -25,7 +27,7 @@ function RightIndex(props: any) {
                 </span>
             </h4><div style={{ textAlign: "center" }}>
                 <br />
-                <img src="./img/photothierry.jpg" />
+                <img src={photothierry} />
                 <br />14 rue des Moulinots (direction Pontarlier) - 25500 Morteau
                     <br />
             </div>

@@ -9,7 +9,8 @@
     "migrate:make": "NODE_ENV=development knex migrate:make --knexfile ./src/knexfile.ts",
     "build": "tsc",
     "start": "node ./build/index.js",
-    "test": "jest --detectOpenHandles --forceExit"
+    "test": "jest --detectOpenHandles --forceExit",
+    "front-dev": "(cd react-app && npm run start)"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
@@ -18,12 +19,12 @@
     "@types/supertest": "^2.0.11",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
-    "jest": "^26.6.3",
+    "jest": "26.6.0",
     "nodemon": "^2.0.7",
+    "sqlite3": "^5.0.2",
     "ts-jest": "^26.5.4",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.4",
-    "sqlite3": "^5.0.2"
+    "typescript": "^4.2.4"
   },
   "dependencies": {
     "@types/react": "^17.0.3",

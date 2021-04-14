@@ -1,4 +1,3 @@
-var React = require('react');
 import Banner from "./components/banner";
 import LeftMenu from "./components/left-menu";
 import RightContainer from "./components/right-container";
@@ -11,19 +10,19 @@ function Index(props: any) {
       <link rel="stylesheet" href="/public/css/index.css" />
     </head>
     <body>
-        <div id="main-container">
-          <div className="container">
-            <Banner />
-            
-            <section id="bottom-section" className="row">
-              <div className="four columns"><LeftMenu /></div>
-              <div className="eight columns"><RightContainer /></div>
-            </section>
-          </div>
+      <div id="main-container">
+        <div className="container">
+          <Banner />
+
+          <section id="bottom-section" className="row">
+            <div className="four columns"><LeftMenu /></div>
+            <div className="eight columns"><RightContainer /></div>
+          </section>
         </div>
+      </div>
     </body>
   </>
   )
 }
 
-module.exports = Index;
+export default Index;
