@@ -1,6 +1,8 @@
-var React = require('react');
+import Banner from "./components/banner";
+import LeftMenu from "./components/left-menu";
+import RightContainer from "./components/right-container";
 
-function HelloMessage(props: any) {
+function Index(props: any) {
   return (<>
     <head>
       <link rel="stylesheet" href="/public/css/normalize.css" />
@@ -10,10 +12,11 @@ function HelloMessage(props: any) {
     <body>
       <div id="main-container">
         <div className="container">
-          <section id="top-section" className="row"></section>
+          <Banner />
+
           <section id="bottom-section" className="row">
-            <div className="four columns">a</div>
-            <div className="eight columns">b</div>
+            <div className="four columns"><LeftMenu /></div>
+            <div className="eight columns"><RightContainer /></div>
           </section>
         </div>
       </div>
@@ -22,4 +25,4 @@ function HelloMessage(props: any) {
   )
 }
 
-module.exports = HelloMessage;
+export default Index;
