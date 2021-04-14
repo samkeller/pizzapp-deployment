@@ -1,12 +1,9 @@
 import express from "express";
 import "./env";
 import { router } from "./api";
+import app from './app'
 const path = require('path');
 
-const app = express();
-
-app.use(express.json());
-app.use(router);
 const PORT = process.env.PORT || 8000;
 
 // Front REACT

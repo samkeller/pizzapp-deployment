@@ -9,6 +9,7 @@ export class PizzaModel extends Model {
   id!: number;
   name!: string;
   prix!: number;
+  size!: string;
 
   static get tableName() {
     return "pizzas";

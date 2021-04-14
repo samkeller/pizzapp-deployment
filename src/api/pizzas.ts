@@ -35,10 +35,11 @@ router.delete('/pizzas/:id', async (req, res) => {
 
 
 router.patch('/pizzas/:id', async (req, res) => {
-  const { name } = req.body;
+  const { name, prix } = req.body;
   const id = req.params.id;
   const pizza = await PizzaModel.query().findById(id).patch({
     name,
+    prix
   }).returning("*")
   res.json(pizza)
 })
