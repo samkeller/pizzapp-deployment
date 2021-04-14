@@ -63,7 +63,7 @@ describe('Integration test', () => {
 
     })
 
-    it("should updated pizza", async () => {
+    it("should updated pizza by id", async () => {
         const request = supertest(app)
         const response =  await request
           .post("/api/pizzas")
