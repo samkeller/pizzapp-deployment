@@ -15,7 +15,7 @@ function LeftMenu(props: any) {
             <ul>
                 {menuDatas.map(route => {
                     return (
-                        <li key={route.id} ><a href="#" onClick={e => changeRoute(e)}>{route.name}</a></li>
+                        <li key={route.id} ><a href="/#" onClick={e => changeRoute(e)}>{route.name}</a></li>
                     )
                 })}
             </ul>
