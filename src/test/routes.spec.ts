@@ -8,20 +8,21 @@ import { database } from '../database';
 
 describe('Integration test', () => {
 
+    beforeAll(async () => {
+        await database.migrate.latest();
+    });
+
+    afterAll(async () => {
+        await database.destroy();
+    });
+
+
     it('should display array on route /api/pizzas', async () => {
         const client = supertest(app)
 
         const response = await client.get('/api/pizzas');
         expect(response.status).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
-
-        beforeAll(async () => {
-            await database.migrate.latest();
-        });
-
-        afterAll(async () => {
-            await database.destroy();
-        });
 
     });
 
