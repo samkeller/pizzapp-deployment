@@ -27,6 +27,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: cd react-app && npm ci
-    - run: npm run build --if-present
-    - run: npm run front-build --if-present
     - run: npm test
