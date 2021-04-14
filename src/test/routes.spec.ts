@@ -28,12 +28,18 @@ describe('Integration test', () => {
     it('should create pizza', async () => {
         const request = supertest(router)
         const pizza = {
-            name : 'peperoni',
-            price : 13,
-            size : "M"
+            name: 'peperoni',
+            price: 13,
+            size: "M"
         }
     });
 
-    
+    test("It should response pizza with id", async () => {
+        const request = supertest(express().use(router))
+        const response = await request.get('/pizzas/1')
 
+        expect(response.status).toBe(200);
+    });
 });
+
+
