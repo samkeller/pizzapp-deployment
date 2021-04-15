@@ -7,11 +7,6 @@ function LeftMenu(props: any) {
     const style = {
     };
 
-    function changeRoute(e: any){
-        e.preventDefault();
-        console.log("fffff");
-    }
-
     return (<>
         <section style={style} id="left-menu">
             <ul>
