@@ -1,15 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development nodemon -r dotenv/config --exec ts-node ./src/index.ts",
+    "dev": "concurrently \"NODE_ENV=development nodemon -r dotenv/config --exec ts-node ./src/index.ts\" \"npm run front-dev\"",
     "migrate:rollback": "NODE_ENV=development knex migrate:rollback --knexfile ./src/knexfile.ts",
     "migrate:latest": "NODE_ENV=development knex migrate:latest --knexfile ./src/knexfile.ts",
     "migrate:up": "NODE_ENV=development knex migrate:up --knexfile ./src/knexfile.ts",
     "migrate:down": "NODE_ENV=development knex migrate:down --knexfile ./src/knexfile.ts",
     "migrate:make": "NODE_ENV=development knex migrate:make --knexfile ./src/knexfile.ts",
-    "build": "tsc",
+    "build": "tsc && npm ci --prefix react-app/ && npm run front-build",
     "start": "node ./build/index.js",
-    "test": "jest --detectOpenHandles --forceExit"
+    "test": "jest --detectOpenHandles --forceExit",
+    "front-dev": "npm run start --prefix react-app/",
+    "front-build": "npm run build  --prefix react-app/"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
@@ -18,7 +20,7 @@
     "@types/supertest": "^2.0.11",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
-    "jest": "^26.6.3",
+    "jest": "26.6.0",
     "nodemon": "^2.0.7",
     "sqlite3": "^5.0.2",
     "ts-jest": "^26.5.4",
@@ -27,6 +29,7 @@
   },
   "dependencies": {
     "@types/react": "^17.0.3",
+    "concurrently": "^6.0.2",
     "express": "^4.17.1",
     "express-react-views": "^0.11.0",
     "knex": "^0.21.15",
@@ -35,5 +38,8 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "supertest": "^6.1.3"
+  },
+  "engines": {
+    "node": "15.x"
   }
 }

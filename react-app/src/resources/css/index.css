@@ -1,0 +1,31 @@
+body {
+    background: #162858 url(../img/toptout.jpg) top repeat-x;
+}
+
+#main-container {
+    max-width: 700px;
+    padding: 2px;
+    margin: 0 auto;
+    height: 80vh;
+}
+
+#main-container>div {
+    width: 100%;
+    margin: 30px 0;
+    border: 2px #006699 solid;
+}
+
+#top-section {
+    height: 321px;
+    background: url(../img/top.jpg) no-repeat;
+    background-repeat: no-repeat;
+    background-size: inherit 100%;
+}
+
+/* Override skeleton */
+
+@media (min-width: 550px) {
+    .column, .columns {
+        margin-left: 0;
+    }
+}
