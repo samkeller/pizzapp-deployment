@@ -1,5 +1,7 @@
 import {menuDatas} from "./menu-datas"
+import {Link} from "react-router-dom";
 var React = require('react');
+
 
 function LeftMenu(props: any) {
     const style = {
@@ -15,7 +17,7 @@ function LeftMenu(props: any) {
             <ul>
                 {menuDatas.map(route => {
                     return (
-                        <li key={route.id} ><a href="/#" onClick={e => changeRoute(e)}>{route.name}</a></li>
+                        <li key={route.id} ><Link to={route.uri}>{route.name}</Link></li>
                     )
                 })}
             </ul>
