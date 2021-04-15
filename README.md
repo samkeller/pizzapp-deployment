@@ -1,5 +1,17 @@
 # pizzapp-server
 
+
+## Installation
+
+- npm i
+- cd react-app/ && npm i
+
+Ce projet a été fait pour faire fonctionner Ci/cd avec github & heroku
+
+
+## Consignes ([Zhouzi](https://github.com/Zhouzi/pizzapp))
+
+
 Ce dépôt accompagne un module de formation sur le déploiement continu et l'intégration continue.
 Afin d'aborder ces aspects, il nous faut donc une application dont l'objet est la commande de plats en livraison.
 Vous êtes invités à la développer par vos propres moyens.
