@@ -8,19 +8,17 @@ import "./resources/css/skeleton.css"
 import "./resources/css/index.css"
 
 function App() {
-
-  fetch("/api/pizzas").then((res) => console.log(res))
   return (
-      <div id="main-container">
-        <div className="container">
-          <Banner />
-          
-          <section id="bottom-section" className="row">
-            <div className="four columns"><LeftMenu /></div>
-            <div className="eight columns"><RightContainer /></div>
-          </section>
-        </div>
+    <div id="main-container">
+      <div className="container">
+        <Banner />
+
+        <section id="bottom-section" className="row">
+          <div className="four columns"><LeftMenu /></div>
+          <div className="eight columns"><RightContainer /></div>
+        </section>
       </div>
+    </div>
   );
 }
 

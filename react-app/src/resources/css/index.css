@@ -21,3 +21,11 @@ body {
     background-repeat: no-repeat;
     background-size: inherit 100%;
 }
+
+/* Override skeleton */
+
+@media (min-width: 550px) {
+    .column, .columns {
+        margin-left: 0;
+    }
+}
