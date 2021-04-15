@@ -1,10 +1,12 @@
 import { Router } from "express";
-import { PizzaModel } from "../database";
+import { IngredientModel, PizzaModel } from "../database";
 
 export const router = Router();
 
 router.get("/pizzas", async (req, res) => {
-  const pizzas = await PizzaModel.query();
+ 
+ const pizzas = await PizzaModel.query().joinRelated(IngredientModel);
+
   res.json(pizzas)
 
 });
@@ -16,12 +18,12 @@ router.get("/pizzas/:id", async (req, res) => {
 })
 
 router.post("/pizzas", async (req, res) => {
-  const { name, prix } = req.body;
+  const { name, prix, size } = req.body;
   const pizza = await PizzaModel.query()
     .insertAndFetch({
       name,
-      prix
-    })
+      prix,
+      size    })
   res.json(pizza);
 });
 

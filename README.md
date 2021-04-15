@@ -36,7 +36,7 @@ npm run migrate:latest
 ```
 
 Puis dans un autre terminal, il faut démarrer l'application via la commande :
-
+ 
 ```
 npm run dev
 ```
