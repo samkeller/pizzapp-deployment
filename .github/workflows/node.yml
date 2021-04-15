@@ -27,4 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: cd react-app && npm ci
-    - run: npm test
+    - uses: mattallty/jest-github-action@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
