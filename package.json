@@ -9,7 +9,7 @@
     "migrate:make": "NODE_ENV=development knex migrate:make --knexfile ./src/knexfile.ts",
     "build": "tsc && npm ci --prefix react-app/ && npm run front-build",
     "start": "node ./build/index.js",
-    "test": "jest --detectOpenHandles --forceExit",
+    "test": "jest --detectOpenHandles",
     "front-dev": "npm run start --prefix react-app/",
     "front-build": "npm run build  --prefix react-app/"
   },
