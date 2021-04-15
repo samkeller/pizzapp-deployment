@@ -8,6 +8,7 @@
     "strict": true,
     "outDir": "build",
     "jsx": "react",
+    "noImplicitAny": false
   },
   "include": ["./src/**/*"]
 }
